@@ -1,0 +1,8 @@
+<h1>{{ post.post_value }}</h1>
+
+<ul>
+    <li>Like: {{ post.likes }}</li>
+    <li>Reblogs: {{ post.reblogs }}</li>
+</ul>
+
+<a href"{% url 'post:detail' post.id %}">Reblog/Like again?</a>
