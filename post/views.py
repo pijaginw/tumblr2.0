@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from .models import Post
@@ -8,9 +8,10 @@ from .models import Post
 def detail(request, post_id):
     try:
         post = Post.objects.get(pk=post_id)
+        print(post)
+        return render(request, 'post/detail.html', {'post': post})
     except Post.DoesNotExist:
-        raise Http404('There is nothing here')
-    return render(request, 'post/detail.html', {'post': post})
+        raise get_object_or_404('There is nothing here')
 
 
 def notes(request, post_id):

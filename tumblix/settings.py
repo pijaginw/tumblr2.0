@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'post',
-    'auth_app',
+    'user'
 ]
 
 MIDDLEWARE = [
@@ -73,6 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tumblix.wsgi.application'
 
+# AUTH_USER_MODEL = 'user.User'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases

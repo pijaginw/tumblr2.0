@@ -6,8 +6,9 @@ from django.utils import timezone
 
 class Post(models.Model):
     title = models.CharField(max_length=70)
-    pub_date = models.DateTimeField('date published')
-    post_value = models.CharField(max_length=1500, default='')
+    pub_date = models.DateField('date published')
+    content = models.CharField(max_length=1500, default='')
+    image = models.ImageField(blank=True)
     reblogs = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     source = 'TODO'
