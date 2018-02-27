@@ -8,7 +8,6 @@ from .models import Post
 def detail(request, post_id):
     try:
         post = Post.objects.get(pk=post_id)
-        print(post)
         return render(request, 'post/detail.html', {'post': post})
     except Post.DoesNotExist:
         raise get_object_or_404('There is nothing here')

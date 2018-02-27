@@ -1,11 +1,17 @@
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
 <h1>{{ post.title }}</h1>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% if post.image %}
+    <img src="../../media/{{ post.image.name }}" alt="{{ post.title }}"/>
+{% endif %}
+
 <form action="{% url 'post:reblog' post.id %}" method="post">
     {% csrf_token %}
     <p>reblog</p>
     <button type="submit" name="reblog" id="note{{ forloop.counter }}" value="{{ note.id }}" />reblog</button>
     <label for="note{{ forloop.counter }}">{{ note.note_date }}</label>
+
     <br/>
 </form>
 <form action="{% url 'post:like' post.id %}" method="post">
