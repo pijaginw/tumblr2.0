@@ -126,6 +126,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    '/var/www/tumblix/static',
 ]
 
 MEDIA_ROOT = '/var/www/tumblix/media/'
