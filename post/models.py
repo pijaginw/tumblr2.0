@@ -1,7 +1,14 @@
 import datetime
 
+from django import forms
 from django.db import models
 from django.utils import timezone
+
+
+class NewPostForm(forms.Form):
+    title = forms.CharField(label='Title', max_length=300)
+    image = forms.FileField(allow_empty_file=True)
+    content = forms.CharField(widget=forms.Textarea)
 
 
 class Post(models.Model):

@@ -1,0 +1,20 @@
+{% extends "./base.html" %}
+
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="uk-margin">
+            <input name="title" class="uk-input uk-width-1-2" type="text" placeholder="Title">
+        </div>
+        <div class="uk-margin">
+            <div uk-form-custom="target: true">
+                <input name="image" type="file">
+                <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+            </div>
+        </div>
+        <div class="uk-margin">
+            <textarea name="content" class="uk-textarea" placeholder="Add something here..."></textarea>
+        </div>
+        <input type="submit" class="uk-button uk-button-default" value="Submit"/>
+    </form>
+{% endblock %}

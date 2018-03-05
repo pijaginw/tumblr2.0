@@ -1,8 +1,31 @@
+import datetime
+
+from django import forms
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from .models import Post
+from .models import Post, NewPostForm
+
+
+def add_post(request):
+    if request.method == 'GET':
+        return render(request, 'post/form.html')
+
+    elif request.method == 'POST':
+        try:
+            form = NewPostForm(request.POST, request.FILES)
+            if form.is_valid():
+                new_post = Post(
+                    title=request.POST.get('title'),
+                    image=request.FILES.get('image'),
+                    content=request.POST.get('content'),
+                    pub_date=datetime.datetime.today()
+                )
+                new_post.save()
+            return render(None, 'post/index.html', {'posts': Post.objects.all().order_by('-pub_date')})
+        except:
+            raise forms.ValidationError("You have forgotten about Fred!")
 
 
 def detail(request, post_id):

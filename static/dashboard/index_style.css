@@ -24,4 +24,9 @@ hr {
 .post_container {
     background-color: white;
     color: black;
+    margin-bottom: 20px;
+}
+
+.content {
+    margin: 20px;
 }
