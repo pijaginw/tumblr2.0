@@ -7,7 +7,7 @@ from django.utils import timezone
 
 class NewPostForm(forms.Form):
     title = forms.CharField(label='Title', max_length=300)
-    image = forms.FileField(allow_empty_file=True)
+    image = forms.FileField(allow_empty_file=True, required=False)
     content = forms.CharField(widget=forms.Textarea)
 
 
@@ -22,9 +22,6 @@ class Post(models.Model):
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-
-    def reblog(self):
-        print('halooooooooo\n\n')
 
     def __str__(self):
         return 'Title: {0}, date: {1}'.format(self.title, self.pub_date)

@@ -23,9 +23,10 @@ def add_post(request):
                     pub_date=datetime.datetime.today()
                 )
                 new_post.save()
-            return render(None, 'post/index.html', {'posts': Post.objects.all().order_by('-pub_date')})
+                return render(None, 'dashboard/index.html', {'posts': Post.objects.all().order_by('-pub_date')})
+            return render(request, 'post/form.html', {'error_msg': 'Something went wrong.'})
         except:
-            raise forms.ValidationError("You have forgotten about Fred!")
+            raise forms.ValidationError("Something went wrong with adding new post!")
 
 
 def detail(request, post_id):
