@@ -1,0 +1,19 @@
+body {
+    background-color: #997677;
+}
+
+header > h2 {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
+header > h4 {
+    font-family: "Courier New", Courier, monospace;
+}
+
+.post-details-container {
+    background-color: #ebdabe;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+}

@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
     path('post/', include('post.urls', namespace='post')),
+    path('user/', include('user.urls')),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

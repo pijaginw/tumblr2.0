@@ -1,6 +1,6 @@
 body {
-    background-color: #eafffd;
-    font-family: "Courier New", Courier, monospace;
+    background-color: #D38F82;
+    font-family: "Arvo", Serif, monospace;
 }
 
 ul {
@@ -15,18 +15,38 @@ hr {
     color: black;
 }
 
-.title {
-    font-family: "Courier New", Courier, monospace;
-    color: black;
-    font-size: 36px;
+.main-container {
+    padding: 50px;
 }
 
-.post_container {
-    background-color: white;
+.posts-container {
+    /*padding: 30px;*/
+}
+
+.header-container {
+    background-color: #D38F82;
+    padding: 30px;
+    float: right;
+    clear: right;
+}
+
+.image-container {
+    text-align: center;
+    width: 80%;
+}
+
+.post-container {
+    background-color: #ebdabe;
     color: black;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    width: 70%;
 }
 
-.content {
-    margin: 20px;
+.title {
+    font-family: "Bungee Shade", Serif, monospace;
+    color: black;
+    font-size: 36px;
 }

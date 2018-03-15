@@ -1,6 +1,7 @@
 import datetime
 
 from django import forms
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -8,6 +9,7 @@ from django.urls import reverse
 from .models import Post, NewPostForm
 
 
+@login_required
 def add_post(request):
     if request.method == 'GET':
         return render(request, 'post/form.html')

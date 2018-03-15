@@ -1,15 +1,17 @@
 {% extends "./index_base.html" %}
 
 {% block content %}
-    <p class="title">Dashboard</p>
+    <h1 class="title">Dashboard</h1>
     <hr noshade="true">
     {% if posts %}
         {% for post in posts %}
-            <div class="uk-card-body post_container">
+            <div class="uk-card-body post-container">
                 <a href="/post/{{ post.id }}/">{{ post.title }}</a>
                 <p class="post_date">{{ post.pub_date }}</p>
                 {% if post.image %}
-                    <img src="../../media/{{ post.image.name }}" alt="{{ post.title }}"/>
+                    <div class="image-container">
+                        <img src="../../media/{{ post.image.name }}" alt="{{ post.title }}"/>
+                    </div>
                 {% endif %}
                 {% if post.content %}
                     <p>{{ post.content }}</p>

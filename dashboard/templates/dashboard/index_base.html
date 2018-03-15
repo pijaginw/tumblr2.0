@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     {% load static %}
     <link rel="stylesheet" href="{% static "dashboard/index_style.css" %}" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee Shade">
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
@@ -12,8 +14,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
 </head>
 <body>
-    <div id="content" class="uk-container">
-        {% block content %}{% endblock %}
+    <div class="main-container">
+        <div class="uk-grid">
+            <div class="uk-width-3-4 posts-container">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="uk-width-1-4">
+                <div class="uk-margin">
+                    <form action="{% url 'user:login' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="uk-button uk-button-default">Log in</button>
+                    </form>
+                </div>
+                <div class="uk-margin">
+                    <form action="{% url 'user:logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="uk-button uk-button-default">Log out</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
