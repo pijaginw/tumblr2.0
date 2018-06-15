@@ -23,3 +23,8 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
+
+
+def register(request):
+    if request.method == 'GET':
+        return render(request, 'register_form.html')

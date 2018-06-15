@@ -1,6 +1,7 @@
 body {
     background-color: #D38F82;
     font-family: "Arvo", Serif, monospace;
+    height: 100%;
 }
 
 ul {
@@ -19,8 +20,17 @@ hr {
     padding: 50px;
 }
 
+.menu-container {
+    text-align: center !important;
+    padding: auto;
+}
+
 .posts-container {
     /*padding: 30px;*/
+}
+
+.grid-container {
+    height: 100%;
 }
 
 .header-container {
